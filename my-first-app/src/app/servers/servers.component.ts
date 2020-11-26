@@ -7,14 +7,21 @@ import { Component, OnInit } from '@angular/core';
   //template: '<app-server></app-server>',
   template: `
   <h1>ahoy</h1>
-  <p>Hola</p>
+  <h1><p *ngIf="displayHola; else displayHello">Hola</p></h1>
+  <ng-template #displayHello>
+    <h2><p>Hello</p></h2>
+  </ng-template>
   <app-server></app-server>
   `,
   styleUrls: ['./servers.component.css']
 })
 export class ServersComponent implements OnInit {
-
-  constructor() { }
+  displayHola = false;
+  constructor() {
+    setTimeout(() => {
+      this.displayHola = true;
+    }, 4000);
+  }
 
   ngOnInit(): void {
   }

@@ -1,3 +1,12 @@
+<app-servers></app-servers>
+<hr>
 <h3>hey, Iam alive</h3>
 <hr>
-<app-servers></app-servers>
+<label>Username ></label>
+<input type="text" [(ngModel)]="username">
+<p> {{ username }} </p>
+<button type="button"
+name="button"
+[disabled]="username === ''"
+class="btn btn-primary"
+(click)="username = ''" >Reset User</button>
